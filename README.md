@@ -1,12 +1,19 @@
 # Metabolomics Identification Report Standards
 
-Metabolomics feature identification report industry standards from BioNovoGene corporation.
+*Metabolomics feature identification report industry standards from [BioNovoGene](http://www.bionovogene.com/) corporation.*
 
 ## Purpose
 
+There is a general consensus that supports the need for standardized reporting of metadata or information describing large-scale metabolomics data sets. Reporting of standard metadata provides a biological and empirical context for the data, enables the reinterrogation and comparison of data by others, which is also could let us interpret the result in a more clearly way.
 
 ## Definition and background
 
+This article is mainly address at the unknown metabolite identification in LC-MS experiment, and proposes the reporting standards related to the chemical analysis aspects of metabolomics experiments its metabolite identification.
+
+Our metabolite identification report consist with two parts of data which is represent to our user:
+
+1. Report excel table that contains the sample information and the meta information of the metabolite.
+2. Data visual plot of the mass spectrum alignment details.
 
 ## Report Table Format
 
