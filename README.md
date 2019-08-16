@@ -92,4 +92,12 @@ And then, is the final identification confidence result for current alignment.
 | algorithm      | enum   | The algorithm name for produce current identification score: ``SSM``/``shared_hits``/``metaDNA``                    |
 | identify.level | enum   | The confidence level of current identification result: ``confirm``, ``MSMSconfirmed``, ``MSMScheck`` and ``ms2hit`` |
 
+## Alignment Visual
 
+Due to the reason of mass spectrum alignment is the most important part in unknown metabolite identification, so it is important to make a clear presentation of the alignment result to user. 
+
+The mass to mass spectrum alignment reuslt can be visual by bi-direction barplot, where the top part of the plot which in blue is the ms2 mass spectrum in user sample; and the bottom half of the plot which in brown color is the ms2 mass spectrum of the reference in standards library.
+
+![](./plots/177.0393@136_M177T136_Ascorbate.png)
+
+> Only the molecule fragment its intensity value greater than 30%, then its mz ratio will be display on the barplot. 
