@@ -2,22 +2,27 @@
 
 *Metabolomics feature identification report industry standards from [BioNovoGene](http://www.bionovogene.com/) corporation.*
 
-## Purpose
+## Definition and background
 
 There is a general consensus that supports the need for standardized reporting of metadata or information describing large-scale metabolomics data sets. Reporting of standard metadata provides a biological and empirical context for the data, enables the reinterrogation and comparison of data by others, which is also could let us interpret the result in a more clearly way.
 
-## Definition and background
-
 This article is mainly address at the unknown metabolite identification in LC-MS experiment, and proposes the reporting standards related to the chemical analysis aspects of metabolomics experiments its metabolite identification.
 
-Our metabolite identification report consist with two parts of data which is represent to our user:
+Some terms in this article that address to:
+
++ ``feature``, the term **feature** in this article is refer to a parent ion in LC-MS experiment result raw data. Where a parent ion feature is a peak in chromatography data, which is consist of mass to charge ratio in ms1 level and its retention time (with a range of lower bound and upper bound) in chromatography result.
++ ``annotation``, the term **annotation** in this article is refer to the multidimensional information about the metabolite that assigned to a **feature**, which such multidimensional information consist with its database cross reference id, common name, basic chemical data like mass and formula composition and molecule structure information, etc. 
++ ``alignment``, the term **alignment** means a kind of operation that use to compare the similarity of the mass spectrum data between user sample and the reference standard library. Such similarity comparison result is the most important evidence that use for unknown **feature** its identification.
++ ``score``, the term **score** is a kind of numeric value that produced by the **alignment** comparison calculation. Literally, the higher score the **alignment** it produce, the better the result it is.
+
+Our metabolite identification report consist with two parts of data which present to our user:
 
 1. Report excel table that contains the sample information and the meta information of the metabolite.
 2. Data visual plot of the mass spectrum alignment details.
 
 ## Report Table Format
 
-### section1: basic info and ms1 parent ion
+### section1: basic info of ion feature
 
 | field   | type    | description                                                                                      |
 |---------|---------|--------------------------------------------------------------------------------------------------|
@@ -78,26 +83,33 @@ This section of data consist with two parts of information. First part of the in
 | library        | name   | The library name                                                                                           |
 | lib.mz         | double | The m/z ratio value of the ion in reference library                                                        |
 | precursor_type | term   | The ``precursor type`` calculation result base on the sample mz and the exact mass value                   |
-| ppm            | double | The ppm value between sample mz and target reference libibrary mz                                          |
-| forward        | double | The ``query vs reference`` SSM socre                                                                       |
-| reverse        | double | The ``reference vs query`` SSM score                                                                       |
-| shared_forward | double | The number of shared fragment in direction ``query vs reference``                                          |
-| shared_reverse | double | The number of shared fragment in direction ``reference vs query``                                          |
-| pct1           | double | The shared fragment ratio in direction ``query vs reference``                                              |
-| pct2           | double | The shared fragment ratio in direction ``reference vs query``                                              |
-| mirror         | double | The mirror score between query and reference                                                               |
-| rt.adjust      | double | The robust rt adjustment score between sample and reference                                                |
-| supports       | double | The spectrum alignment supports count of current metabolite cross over multiple standard spectrum database |
-| supports.score | double | The ratio of supports against the max likelihood supports score                                            |
+| ppm            | score  | The ppm value between sample mz and target reference libibrary mz                                          |
+| forward        | score  | The ``query vs reference`` SSM socre                                                                       |
+| reverse        | score  | The ``reference vs query`` SSM score                                                                       |
+| shared_forward | score  | The number of shared fragment in direction ``query vs reference``                                          |
+| shared_reverse | score  | The number of shared fragment in direction ``reference vs query``                                          |
+| pct1           | score  | The shared fragment ratio in direction ``query vs reference``                                              |
+| pct2           | score  | The shared fragment ratio in direction ``reference vs query``                                              |
+| mirror         | score  | The mirror score between query and reference                                                               |
+| rt.adjust      | score  | The robust rt adjustment score between sample and reference                                                |
+| supports       | score  | The spectrum alignment supports count of current metabolite cross over multiple standard spectrum database |
+| supports.score | score  | The ratio of supports against the max likelihood supports score                                            |
 
 And then, is the final identification confidence result for current alignment.
 
-| field          | type   | description                                                                                                         |
-|----------------|--------|---------------------------------------------------------------------------------------------------------------------|
-| pvalue         | double | The max likelihood hyper-geometric pvalue test result                                                               |
-| FDR            | double | FDR controls of the pvalue                                                                                          |
-| algorithm      | enum   | The algorithm name for produce current identification score: ``SSM``/``shared_hits``/``metaDNA``                    |
-| identify.level | enum   | The confidence level of current identification result: ``confirm``, ``MSMSconfirmed``, ``MSMScheck`` and ``ms2hit`` |
+| field          | type  | description                                                                                                         |
+|----------------|-------|---------------------------------------------------------------------------------------------------------------------|
+| pvalue         | score | The max likelihood hyper-geometric pvalue test result                                                               |
+| FDR            | score | FDR controls of the pvalue                                                                                          |
+| algorithm      | enum  | The algorithm name for produce current identification score: ``SSM``/``shared_hits``/``metaDNA``                    |
+| identify.level | enum  | The confidence level of current identification result: ``confirm``, ``MSMSconfirmed``, ``MSMScheck`` and ``ms2hit`` |
+
+The result of ``identify.level`` have literal values for the representation of the identification its confidence level:
+
++ confirm: the unknown feature is *confirm* as the assigned metabolite both in ms1 level and ms2 level
++ MSMSconfirmed: the unknown feature is *confirm* as the assigned metabolite in ms2 level, and ms1 m/z ratio, but not match in rt relative adjustment result value.
++ MSMScheck: the unknown feature is probably *confirm* as the assigned metabolite in ms2 level and ms1 m/z ratio, but have low score in ms2 alignment and rt also not match.
++ ms2hit: the unknown feature is probably *confirm* as the assigned metabolite, but have low score in ms2 alignment and rt match, we only sure that the alignment have the relative high number of shared fragments between the user sample and the reference library.
 
 ## Alignment Visual
 
@@ -107,4 +119,4 @@ The mass to mass spectrum alignment reuslt can be visual by bi-direction barplot
 
 ![](./plots/177.0393@136_M177T136_Ascorbate.png)
 
-> Only the molecule fragment its intensity value greater than 30%, then its mz ratio will be display on the barplot. 
+> Only the molecule fragment its intensity value greater than 30%, then its mz ratio will be display on this barplot. 
