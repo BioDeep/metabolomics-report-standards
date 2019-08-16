@@ -1,8 +1,29 @@
 # Metabolomics Identification Report Standards
 
-*Metabolomics feature identification report industry standards from [BioNovoGene](http://www.bionovogene.com/) corporation.*
+*A Metabolomics unknown feature identification report industry standards from [BioNovoGene](http://www.bionovogene.com/) corporation.*
 
-## Definition and background
+_#2019.08.16#_ at Suzhou, China 
+
+<span style="font-size: 2em;">TOC</span>
+
+<!-- vscode-markdown-toc -->
+* 1. [Definition and background](#Definitionandbackground)
+* 2. [Report Table Format](#ReportTableFormat)
+	* 2.1. [section1: basic info of ion feature](#section1:basicinfoofionfeature)
+	* 2.2. [section2: annotation information](#section2:annotationinformation)
+		* 2.2.1. [part1. the basic meta information](#part1.thebasicmetainformation)
+		* 2.2.2. [part2. the external database cross reference id](#part2.theexternaldatabasecrossreferenceid)
+		* 2.2.3. [part3. the chemical structure information of target](#part3.thechemicalstructureinformationoftarget)
+	* 2.3. [section3: annotation score](#section3:annotationscore)
+* 3. [Alignment Visual](#AlignmentVisual)
+
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+##  1. <a name='Definitionandbackground'></a>Definition and background
 
 There is a general consensus that supports the need for standardized reporting of metadata or information describing large-scale metabolomics data sets. Reporting of standard metadata provides a biological and empirical context for the data, enables the reinterrogation and comparison of data by others, which is also could let us interpret the result in a more clearly way.
 
@@ -20,9 +41,11 @@ Our metabolite identification report consist with two parts of data which presen
 1. Report excel table that contains the raw sample information and the meta annotation information of the metabolite.
 2. Data visual plot for the mass spectrum alignment details.
 
-## Report Table Format
+##  2. <a name='ReportTableFormat'></a>Report Table Format
 
-### section1: basic info of ion feature
+![](demo-table.png)
+
+###  2.1. <a name='section1:basicinfoofionfeature'></a>section1: basic info of ion feature
 
 | field   | type    | description                                                                                      |
 |---------|---------|--------------------------------------------------------------------------------------------------|
@@ -36,11 +59,11 @@ Our metabolite identification report consist with two parts of data which presen
 | index   | name    | The row index                                                                                    |
 | feature | name    | The feature of the best ms/ms spectrum in raw file, in format like: ``rawfile_name#scan_number`` |
 
-### section2: annotation information
+###  2.2. <a name='section2:annotationinformation'></a>section2: annotation information
 
 In this section, includes three parts of annotation information to describ the resulted metabolite.
 
-#### part1. the basic meta information
+####  2.2.1. <a name='part1.thebasicmetainformation'></a>part1. the basic meta information
 
 | field      | type   | description                                                   |
 |------------|--------|---------------------------------------------------------------|
@@ -49,7 +72,7 @@ In this section, includes three parts of annotation information to describ the r
 | exact_mass | double | The exact mass of the assigned metabolite                     |
 | formula    | term   | The chemical formula of the assigned metabolite               |
 
-#### part2. the external database cross reference id
+####  2.2.2. <a name='part2.theexternaldatabasecrossreferenceid'></a>part2. the external database cross reference id
 
 | field   | type | description                                |
 |---------|------|--------------------------------------------|
@@ -60,7 +83,7 @@ In this section, includes three parts of annotation information to describ the r
 | CAS     | term | The CAS registry number                    |
 | metlin  | term | The metlin metabolite id                   |
 
-#### part3. the chemical structure information of target
+####  2.2.3. <a name='part3.thechemicalstructureinformationoftarget'></a>part3. the chemical structure information of target
 
 | field               | type | description                                                                                        |
 |---------------------|------|----------------------------------------------------------------------------------------------------|
@@ -73,7 +96,7 @@ In this section, includes three parts of annotation information to describ the r
 | sub_class           | term | The chemical structure classify result in *sub class* level from ``ClassyFire`` database           |
 | molecular_framework | term | The chemical structure classify result in *molecular framework* level from ``ClassyFire`` database |
 
-### section3: annotation score
+###  2.3. <a name='section3:annotationscore'></a>section3: annotation score
 
 This section of data consist with two parts of information. First part of the information is the alignment information for the metabolite identification, includes: the reference standard source trace in the reference library, and multiple dimensions of the scores of current identification.
 
@@ -111,10 +134,10 @@ The result of ``identify.level`` have literal values for the representation of t
 + MSMScheck: the unknown feature is probably *confirm* as the assigned metabolite in ms2 level and ms1 m/z ratio, but have low score in ms2 alignment and rt also not match.
 + ms2hit: the unknown feature is probably *confirm* as the assigned metabolite, but have low score in ms2 alignment and rt match, we only sure that the alignment have the relative high number of shared fragments between the user sample and the reference library.
 
-> ``SSM`` algorithm is original defined in this literature article: "MetDIA: Targeted Metabolite Extraction of Multiplexed MS/MS Spectra Generated by Data-Independent Acquisition." **_DOI: 10.1021/acs.analchem.6b02122_**
-> ``pvalue`` is tested from the ``BHR`` score vector, which is original defined in this literature article: "KAAS: an automatic genome annotation and pathway reconstruction server." **_DOI: 10.1093/nar/gkm321_**
+> 1. ``SSM`` algorithm is original defined in this literature article: "MetDIA: Targeted Metabolite Extraction of Multiplexed MS/MS Spectra Generated by Data-Independent Acquisition." **_DOI: 10.1021/acs.analchem.6b02122_**
+> 2. ``pvalue`` is tested from the ``BHR`` score vector, which is original defined in this literature article: "KAAS: an automatic genome annotation and pathway reconstruction server." **_DOI: 10.1093/nar/gkm321_**
 
-## Alignment Visual
+##  3. <a name='AlignmentVisual'></a>Alignment Visual
 
 Due to the reason of mass spectrum alignment is the most important part in unknown metabolite identification, so it is important to make a clear presentation of the alignment result to user. 
 
