@@ -1,2 +1,7 @@
-# metabolomics-report-standards
-Metabolomics Feature Identification Report Industry Standards from BioNovoGene Corporation
+# Metabolomics Identification Report Standards
+
+Metabolomics feature identification report industry standards from BioNovoGene corporation.
+
+## Purpose
+
+
