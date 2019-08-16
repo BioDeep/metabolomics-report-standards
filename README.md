@@ -1,5 +1,7 @@
 # Metabolomics Identification Report Standards
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3369716.svg)](https://doi.org/10.5281/zenodo.3369716)
+
 *A Metabolomics unknown feature identification report industry standards from [BioNovoGene](http://www.bionovogene.com/) corporation.*
 
 _#2019.08.16#_ at Suzhou, China 
