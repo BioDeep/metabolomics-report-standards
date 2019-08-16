@@ -10,15 +10,15 @@ This article is mainly address at the unknown metabolite identification in LC-MS
 
 Some terms in this article that address to:
 
-+ ``feature``, the term **feature** in this article is refer to a parent ion in LC-MS experiment result raw data. Where a parent ion feature is a peak in chromatography data, which is consist of mass to charge ratio in ms1 level and its retention time (with a range of lower bound and upper bound) in chromatography result.
-+ ``annotation``, the term **annotation** in this article is refer to the multidimensional information about the metabolite that assigned to a **feature**, which such multidimensional information consist with its database cross reference id, common name, basic chemical data like mass and formula composition and molecule structure information, etc. 
++ ``feature``, the term **feature** in this article is refer to a parent ion in LC-MS experiment result raw data. Where a parent ion feature is a peak in chromatography data, which is consist of mass to charge ratio in ms1 level and its retention time (with a range of lower bound and upper bound) in chromatography experiment result.
++ ``annotation``, the term **annotation** in this article is refer to the multidimensional information about the metabolite that assigned to a unknown **feature**, which such multidimensional information consist with the metabolite its cross reference id in different database, common name, basic chemical data like mass and formula composition and its molecule structure information, etc. 
 + ``alignment``, the term **alignment** means a kind of operation that use to compare the similarity of the mass spectrum data between user sample and the reference standard library. Such similarity comparison result is the most important evidence that use for unknown **feature** its identification.
 + ``score``, the term **score** is a kind of numeric value that produced by the **alignment** comparison calculation. Literally, the higher score the **alignment** it produce, the better the result it is.
 
 Our metabolite identification report consist with two parts of data which present to our user:
 
-1. Report excel table that contains the sample information and the meta information of the metabolite.
-2. Data visual plot of the mass spectrum alignment details.
+1. Report excel table that contains the raw sample information and the meta annotation information of the metabolite.
+2. Data visual plot for the mass spectrum alignment details.
 
 ## Report Table Format
 
