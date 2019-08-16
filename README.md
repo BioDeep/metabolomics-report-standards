@@ -18,6 +18,7 @@ _#2019.08.16#_ at Suzhou, China
 		* 2.2.3. [part3. the chemical structure information of target](#part3.thechemicalstructureinformationoftarget)
 	* 2.3. [section3: annotation score](#section3:annotationscore)
 * 3. [Alignment Visual](#AlignmentVisual)
+* 4. [Supplementary](#Supplementary)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -161,7 +162,7 @@ The mass to mass spectrum alignment reuslt can be visual by bi-direction barplot
 
 <div style="page-break-after: always;" ></div>
 
-## Supplementary
+##  4. <a name='Supplementary'></a>Supplementary
 
 | item                         | url link                                                                                                                                               |
 |------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
