@@ -164,9 +164,9 @@ The mass to mass spectrum alignment reuslt can be visual by bi-direction barplot
 
 ##  4. <a name='Supplementary'></a>Supplementary
 
-| item                         | url link                                                                                                                                               |
-|------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Software and web server      | http://msms.biodeep.cn/                                                                                                                                |
-| Commercial analysis services | 0512-62959105 (market@bionovogene.com)                                                                                                                 |
-| Download demo report table   | [github](https://github.com/BioDeep/metabolomics-report-standards/blob/a10485ad642ec1eafd6878b99b0033a75b8cee2e/doMSMSalignment.report1.xlsx?raw=true) |
-| Demo alignment visual plots  | [View on github](https://github.com/BioDeep/metabolomics-report-standards/tree/3356a228489aaef80a8a16ee58e982262b6823ea/plots)                         |
+| item                             | url link                                                                                                                                               |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Free software and web server** | http://msms.biodeep.cn/                                                                                                                                |
+| Commercial analysis services     | 0512-62959105 (market@bionovogene.com)                                                                                                                 |
+| Download demo report table       | [github](https://github.com/BioDeep/metabolomics-report-standards/blob/a10485ad642ec1eafd6878b99b0033a75b8cee2e/doMSMSalignment.report1.xlsx?raw=true) |
+| Demo alignment visual plots      | [View on github](https://github.com/BioDeep/metabolomics-report-standards/tree/3356a228489aaef80a8a16ee58e982262b6823ea/plots)                         |
