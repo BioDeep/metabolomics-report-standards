@@ -1,4 +1,4 @@
-# Metabolomics Identification Report Standards
+# Metabolomics Identification Report Standards Version 2
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3369716.svg)](https://doi.org/10.5281/zenodo.3369716)
 
@@ -61,7 +61,9 @@ Our metabolite identification report consist with two parts of data which presen
 | field   | type    | description                                                                                      |
 |---------|---------|--------------------------------------------------------------------------------------------------|
 | ID      | name    | The unique id of current ion, which can be generated from ``xcms`` R package                     |
-| mz      | double  | m/z ratio of the ion in ms1 result                                                               |
+| mz      | double  | ``m/z`` ratio of the ion in ms1 result                                                           |
+| mzmin   | double  | lower bound of the ``m/z`` ratio                                                                 |
+| mzmax   | double  | upper bound of the ``m/z`` ratio                                                                 |
 | rt      | double  | rt in seconds of the ion in liquid chromatography result                                         |
 | rtmin   | double  | rt its lower bounds of the ion peaks                                                             |
 | rtmax   | double  | rt its upper bounds of the ion peaks                                                             |
@@ -87,14 +89,16 @@ In this section, includes three parts of annotation information to describ the r
 
 ####  2.2.2. <a name='part2.theexternaldatabasecrossreferenceid'></a>part2. the external database cross reference id
 
-| field   | type | description                                |
-|---------|------|--------------------------------------------|
-| KEGG    | term | The KEGG id                                |
-| hmdb    | term | The HMDB main id                           |
-| pubchem | term | The pubchem compound id (not substrate id) |
-| chebi   | term | The chebi main id                          |
-| CAS     | term | The CAS registry number                    |
-| metlin  | term | The metlin metabolite id                   |
+| field     | type | description                                  |
+|-----------|------|----------------------------------------------|
+| KEGG      | term | The KEGG id                                  |
+| hmdb      | term | The HMDB main id                             |
+| pubchem   | term | The pubchem compound id (not substrate id)   |
+| chebi     | term | The chebi main id                            |
+| CAS       | term | The CAS registry number                      |
+| metlin    | term | The metlin metabolite id                     |
+| Wikipedia | term | The wikipedia query term for this metabolite |
+| mzCloud   | term | The mzCloud guid of this metabolite          |
 
 ####  2.2.3. <a name='part3.thechemicalstructureinformationoftarget'></a>part3. the chemical structure information of target
 
@@ -133,12 +137,17 @@ This section of data consist with two parts of information. First part of the in
 
 And then, is the final identification confidence result for current alignment.
 
-| field          | type  | description                                                                                                         |
-|----------------|-------|---------------------------------------------------------------------------------------------------------------------|
-| pvalue         | score | The max likelihood hyper-geometric pvalue test result                                                               |
-| FDR            | score | FDR controls of the pvalue                                                                                          |
+| field  | type  | description                                           |
+|--------|-------|-------------------------------------------------------|
+| pvalue | score | The max likelihood hyper-geometric pvalue test result |
+| FDR    | score | FDR controls of the pvalue                            |
+|FDR.flag| score |
+|	FDR.pros|	score |
+|FDR.cons|	score |
+|FDR.ratio|score |
 | algorithm      | enum  | The algorithm name for produce current identification score: ``SSM``/``shared_hits``/``metaDNA``                    |
 | identify.level | enum  | The confidence level of current identification result: ``confirm``, ``MSMSconfirmed``, ``MSMScheck`` and ``ms2hit`` |
+|MSI_levels | enum| |
 
 The result of ``identify.level`` have literal values for the representation of the identification its confidence level:
 
