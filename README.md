@@ -155,7 +155,7 @@ The result of ``identify.level`` have literal values for the representation of t
 + ``MSMSconfirmed``: the unknown feature is *confirm* as the assigned metabolite in ms2 level, and ms1 m/z ratio, but not match in rt relative adjustment result value.
 + ``MSMScheck``: the unknown feature is probably *confirm* as the assigned metabolite in ms2 level and ms1 m/z ratio, but have low score in ms2 alignment and rt also not match.
 + ``ms2hit``: the unknown feature is probably *confirm* as the assigned metabolite, but have low score in ms2 alignment and rt match, we only sure that the alignment have the relative high number of shared fragments between the user sample and the reference library.
-+ ``ms1hit``
++ ``ms1hit``: the unknown feature didn't have the ms2 level hits in the reference spectrum database, but has the alignment reuslt both in dimensions ``m/z`` and ``rt`` within the given tolerance value. 
 
 The result of ``MSI_levels`` have literal values for the representation of the identification its confidence level:
 
@@ -164,6 +164,10 @@ The result of ``MSI_levels`` have literal values for the representation of the i
 
 The metabolomics identification result also can be divided into
 
++ **Actually identified as**
++ **Chemical Character **
++
++
 
 ##### References
 
